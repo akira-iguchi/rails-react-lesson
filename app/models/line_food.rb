@@ -5,7 +5,9 @@ class LineFood < ApplicationRecord
 
   validates :count, numericality: { greater_than: 0 }
 
+  # すべてのLineFoodからactive: trueなものを取得する(Laravelのアクセサをみたいなもの？)
   scope :active, -> { where(active: true) }
+
   scope :other_restaurant,
     -> (picked_restaurant_id) { where.not(restaurant_id: picked_restaurant_id) }
 

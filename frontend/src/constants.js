@@ -1,5 +1,5 @@
 export const REQUEST_STATE = {
-  INITIAL: 'INITIAL',
+  INITIAL: 'INITIAL',  // APIリクエスト中に画面がいまどういう状態なのか？
   LOADING: 'LOADING',
   OK: 'OK',
 }

@@ -68,10 +68,17 @@ const SubText = styled.p`
 `;
 
 export const Restaurants = () => {
+
+  // setCount(2つ目)は関数として利用、stateを変更できる。count(1つ目)はstate
+  // const [count, setCount] = useState(0)
+
+  // stateがinitialStateあるいはstate、actionがdispatch。[state, dispatch]はuseStateと同じ（命名自由）
   const [state, dispatch] = useReducer(restaurantsReducer, initialState);
 
+  // 毎回のレンダー後に呼ばれる
   useEffect(() => {
-    dispatch({ type: restaurantsActionTypes.FETCHING });
+    // restaurantsActionTypes => apis→constant.js
+    dispatch({ type: restaurantsActionTypes.FETCHING }); // 引数にオブジェクト
     fetchRestaurants()
     .then((data) =>
       dispatch({

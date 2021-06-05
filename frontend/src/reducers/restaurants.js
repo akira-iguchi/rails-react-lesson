@@ -10,6 +10,7 @@ export const restaurantsActionTypes = {
   FETCH_SUCCESS: 'FETCH_SUCCESS'
 }
 
+// 引数state, actionは固定
 export const restaurantsReducer = (state, action) => {
   switch (action.type) {
     case restaurantsActionTypes.FETCHING:
@@ -20,6 +21,7 @@ export const restaurantsReducer = (state, action) => {
     case restaurantsActionTypes.FETCH_SUCCESS:
       return {
         fetchState: REQUEST_STATE.OK,
+        // payload: "アクションの実行に必要な任意のデータ"
         restaurantsList: action.payload.restaurants,
       };
     default:
