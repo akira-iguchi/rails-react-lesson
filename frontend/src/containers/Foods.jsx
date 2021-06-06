@@ -76,7 +76,7 @@ export const Foods = ({
   useEffect(() => {
     dispatch({ type: foodsActionTypes.FETCHING });
 
-    // restaurantsId = App.js「path="/restaurants/:restaurantsId/foods"」のrestaurantsId
+    // restaurantsId = App.js(path="/restaurants/:restaurantsId/foods")のrestaurantsId
     // match.params.restaurantsId = path="/restaurants/:restaurantsId/foods"
     fetchFoods(match.params.restaurantsId)
       .then((data) => {
