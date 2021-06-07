@@ -56,7 +56,7 @@ export const Orders = () => {
             lineFoodsSummary: data
           }
         })
-      );
+      )
   }, []);
 
   const postLineFoods = () => {

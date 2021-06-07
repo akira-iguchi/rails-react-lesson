@@ -1,6 +1,8 @@
 import React, { Fragment,  useReducer, useEffect ,useState } from 'react';
 import styled from 'styled-components';
-import { useHistory, Link } from "react-router-dom";
+
+// Router.pushみたいなもの
+import { useHistory, Link, Router } from "react-router-dom";
 
 // components
 import { LocalMallIcon } from '../components/Icons';
@@ -69,6 +71,9 @@ export const Foods = ({
     existingRestaurantName: '',
     newRestaurantName: '',
   };
+  // const [isOpenOrderDialog, setIsOpenOrderDialog] = useState(false)
+  // const [selectedFood, setSelectedFood] = useState(null)
+  // のようにも書ける（不便）
   const [state, setState] = useState(initialState);
   const [foodsState, dispatch] = useReducer(foodsReducer, foodsInitialState);
   const history = useHistory();
